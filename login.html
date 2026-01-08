@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVCE Student Diary Login</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            /* Light alice blue matching the screenshot roughly */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: #0091D5;
+            /* Cyan-Blue */
+            color: white;
+            padding: 15px 20px;
+            font-size: 20px;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .logo-container {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .logo-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            /* Assuming it's circular */
+            object-fit: contain;
+        }
+
+        .form-group {
+            width: 100%;
+            max-width: 320px;
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            color: #0091D5;
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 10px 0;
+            border: none;
+            border-bottom: 2px solid #0091D5;
+            background-color: transparent;
+            font-size: 18px;
+            outline: none;
+            color: #333;
+        }
+
+        .form-input:focus {
+            border-bottom-color: #007bb5;
+        }
+
+        .checkbox-group {
+            width: 100%;
+            max-width: 320px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .checkbox-group input {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+            accent-color: #0091D5;
+        }
+
+        .login-btn {
+            width: 100%;
+            max-width: 320px;
+            background-color: #008CBA;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .login-btn:hover {
+            background-color: #007bb5;
+        }
+
+        .links {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .links a {
+            display: block;
+            color: #0091D5;
+            text-decoration: none;
+            margin-bottom: 5px;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Overlay */
+        .loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        /* Spinner */
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #0091D5;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="loadingOverlay" class="loader-overlay">
+        <div class="loader"></div>
+    </div>
+
+    <div class="header">
+        SVCE Student Diary
+    </div>
+
+    <div class="content">
+        <div class="logo-container">
+            <!-- Using the most likely logo file related to seal, defaulting to existing generic if unsure -->
+            <img src="dify-1.jpg" alt="SVCE Seal">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Username</label>
+            <input type="text" id="username" class="form-input" placeholder="">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" id="password" class="form-input" placeholder="">
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" checked>
+            <label>Remember Password</label>
+        </div>
+
+        <button class="login-btn" onclick="validateLogin()">Login</button>
+
+        <script>
+            function validateLogin() {
+                var user = document.getElementById("username").value;
+                var pass = document.getElementById("password").value;
+
+                if (user.toLowerCase() === "2023cs0524" && pass === "Tarun@3112") {
+                    // Show loader indicating processing
+                    document.getElementById("loadingOverlay").style.display = "flex";
+
+                    // Delay for 2 seconds before redirecting
+                    setTimeout(function () {
+                        window.location.href = "svce3.html";
+                    }, 2000);
+                } else {
+                    alert("Invalid Username or Password");
+                }
+            }
+        </script>
+
+        <div class="links">
+            <a href="#">Forgot Password?</a>
+            <a href="#">Click here to register parent?</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        :root {
+            --primary-color: #0091D5;
+            /* Cyan-Blue specific to typical result portals */
+            --header-text: #ffffff;
+            --text-dark: #333333;
+            --text-secondary: #0091D5;
+            --border-color: #cccccc;
+            --bg-color: #f5f5f5;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            /* Mobile app feel */
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--primary-color);
+            color: var(--header-text);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-btn {
+            font-size: 24px;
+            margin-right: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 20px;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Student Details */
+        .student-details {
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .student-name {
+            color: var(--text-secondary);
+            text-align: center;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .detail-row {
+            display: flex;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #000;
+        }
+
+        .detail-label {
+            color: var(--text-secondary);
+            width: 40%;
+            font-weight: 500;
+        }
+
+        .detail-value {
+            width: 60%;
+            padding-left: 10px;
+            font-weight: 400;
+        }
+
+        /* Result Table */
+        .result-table-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 10px;
+            display: flex;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .col-subject {
+            flex: 3;
+            padding-left: 10px;
+        }
+
+        .col-grade {
+            flex: 1;
+            text-align: center;
+        }
+
+        .col-result {
+            flex: 1;
+            text-align: center;
+        }
+
+        .result-row {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            background-color: #fff;
+            padding: 12px 0;
+            align-items: center;
+        }
+
+        .result-row:last-child {
+            border-bottom: none;
+        }
+
+        .result-row .col-subject {
+            font-size: 14px;
+            line-height: 1.4;
+            color: #000;
+        }
+
+        .result-row .col-grade,
+        .result-row .col-result {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Specific Styles for Grades */
+        .grade-highlight {
+            color: #333;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Result</h1>
+        </div>
+
+        <div class="student-details">
+            <div class="student-name">TARUN KUMAR R</div>
+
+            <div class="detail-row">
+                <div class="detail-label">Registration No</div>
+                <div class="detail-value">: 2127230501159</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Degree</div>
+                <div class="detail-value">: B.E.</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Branch</div>
+                <div class="detail-value">: Computer Science and Engineering</div>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-table-header">
+                <div class="col-subject">Subject</div>
+                <div class="col-grade">Grade</div>
+                <div class="col-result">Result</div>
+            </div>
+
+            <!-- Row 1 -->
+            <div class="result-row">
+                <div class="col-subject">Digital Principles and System Design(CS22202)</div>
+                <div class="col-grade grade-highlight">A</div>
+                <div class="col-result">P</div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="result-row">
+                <div class="col-subject">Object Oriented Programming(CS22203)</div>
+                <div class="col-grade grade-highlight">A</div>
+                <div class="col-result">P</div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="result-row">
+                <div class="col-subject">Science and Technology in Ancient Tamil Society(HS22251)</div>
+                <div class="col-grade grade-highlight">A+</div>
+                <div class="col-result">P</div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="result-row">
+                <div class="col-subject">Technical English(HS22252)</div>
+                <div class="col-grade grade-highlight">A</div>
+                <div class="col-result">P</div>
+            </div>
+
+            <!-- Row 5 -->
+            <div class="result-row">
+                <div class="col-subject">Applied Mathematics II(MA22251)</div>
+                <div class="col-grade grade-highlight">A</div>
+                <div class="col-result">P</div>
+            </div>
+
+            <!-- Row 6 -->
+            <div class="result-row">
+                <div class="col-subject">Technical Drawing(ME22251)</div>
+                <div class="col-grade grade-highlight">A</div>
+                <div class="col-result">P</div>
+            </div>
+
+            <!-- Row 7 -->
+            <div class="result-row">
+                <div class="col-subject">Digital Principles and System Design Laboratory(CS22211)</div>
+                <div class="col-grade grade-highlight">O</div>
+                <div class="col-result">P</div>
+            </div>
+
+            <!-- Row 8 -->
+            <div class="result-row">
+                <div class="col-subject">Object Oriented Programming Laboratory(CS22212)</div>
+                <div class="col-grade grade-highlight">A+</div>
+                <div class="col-result">P</div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

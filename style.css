@@ -1,0 +1,8 @@
+.change{
+   color: grey; 
+}
+
+marquee {
+    display: flex;
+    justify-content: space-between;
+}
